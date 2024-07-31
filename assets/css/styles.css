@@ -4,6 +4,8 @@
 /*===== VARIABLES CSS =====*/
 
 :root {
+    --header-height: 3rem;
+
     /*===== Colors =====*/
     --first-color: #069C54;
     --first-color-alt: #048654;
@@ -33,7 +35,7 @@
     --mb-3: 1.5rem;
     --mb-4: 2rem;
     --mb-5: 2.5rem;
-    --mb-6: 4rem;
+    --mb-6: 3rem;
 
     /*========== z index ==========*/
     --z-tooltip: 10;
@@ -46,8 +48,8 @@
         --h1-font-size: 2.5rem;
         --h2-font-size: 1.5rem;
         --h3-font-size: 1.25rem;
-        --normal-font-size: .938rem;
-        --small-font-size: .938rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
         --smaller-font-size: .813rem;
     }
 }
@@ -57,13 +59,13 @@
 *,::before,::after{
     box-sizing: border-box;
 }
-
-html {
+  
+html{
     scroll-behavior: smooth;
 }
 
 body{
-    margin: var(--header-height);
+    margin: var(--header-height) 0 0 0;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
@@ -116,14 +118,126 @@ img{
 }
 
 /*========== LAYOUT ==========*/
+.bd-container{
+    max-width: 960px;
+    width: calc(100% - 2rem);
+    margin-left: var(--mb-2);
+    margin-right: var(--mb-2);
+}
 
-/*========== NAV ==========*/
+.bd-grid{
+    display: grid;
+    gap: 1.5rem;
+}
+
+.l-header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: var(--body-color);
+}
+
+/*========== HOME ==========*/
+
+.nav{
+    max-width: 1024px;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px){
+    .nav__menu{
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        padding: 1.5rem 0 1rem;
+        text-align: center;
+        background-color: var(--body-color);
+        transition: .4s;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, .1);
+        border-radius: 0 0 1rem 1rem;
+        z-index: var(--z-fixed);
+    }
+}
+
+.nav__item{
+    margin-bottom: var(--mb-2);
+}
+
+.mav__link, .nav__logo, .nav__toggle{
+    color: var(--text-color);
+    font-weight: var(--font-medium);
+}
+
+.nav__logo:hover{
+    color: var(--first-color);
+}
+
+.nav__link{
+    transition: .3s;
+}
+
+.nav__link:hover{
+    color: var(--first-color);
+}
+
+.nav__toggle{
+    font-size: 1.3rem;
+    cursor: pointer;
+}
 
 /* Show menu */
+.show-menu{
+    top:var(--header-height);
+}
+
 /* Active menu */
+
+.active-link{
+    color: var(--first-color);
+}
 /* Change background header */
+
+.scroll-header{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+
+}
 /* Scroll top */
+
+.scrolltop{
+    position: fixed;
+    right: 1rem;
+    bottom: -20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .3rem;
+    background-color: rgba(6, 156, 85, .5);
+    border-radius: .4rem;
+    z-index: var(--z-tooltip);
+    transition: .4s;
+    visibility: hidden;
+}
+
+.scrolltop:hover{
+    background-color: var(--first-color-alt);
+}
+
+.scrolltop__icon{
+    font-size: 1.8rem;
+    color: var(--body-color);
+}
 /* Show scrolltop */
+
+.scroll-top{
+    visibility: visible;
+    bottom: 1.5rem;
+}
 
 /*========== HOME ==========*/
 
