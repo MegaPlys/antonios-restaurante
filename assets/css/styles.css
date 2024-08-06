@@ -100,11 +100,11 @@ img{
     padding: 4rem 0 2rem;
 }
 
-.section-tile, .section-subtitle{
+.section-title, .section-subtitle{
     text-align: center;
 }
 
-.section-tile{
+.section-title{
     font-size: var(--h1-font-size);
     color: var(--title-color);
     margin-bottom: var(--mb-3);   
@@ -277,8 +277,46 @@ img{
 }
 /*========== ABOUT ==========*/
 
-/*========== SERVICES ==========*/
+.about__data{
+    text-align: center;
+}
 
+.about__description{
+    margin-bottom: var(--mb-3);
+}
+
+.about__img{
+    width: 280px;
+    border-radius: .5rem;
+    justify-self: center;
+}
+
+/*========== SERVICES ==========*/
+.services__container{
+    row-gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.services__content{
+    text-align: center;
+}
+
+.services__img{
+    width: 64px;
+    height: 64px;
+    fill: var(--first-color);
+    margin-bottom: var(--mb-2);
+}
+
+.services__title{
+    font-size: var(--h3-font-size);
+    color: var(--title-color);
+    margin-bottom: var(--mb-1);
+}
+
+.services__description{
+    padding: 0 1.5rem;
+}
 /*========== MENU ==========*/
 
 /*========== APP ==========*/
